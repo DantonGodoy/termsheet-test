@@ -1,0 +1,26 @@
+<mat-grid-list [cols]="4" rowHeight="10vh">
+  <!-- HEADER -->
+  <mat-grid-tile [colspan]="gridSettings.headerTile.cols" [rowspan]="gridSettings.headerTile.rows"
+    [style.background]="gridSettings.headerTile.color">
+    <app-header></app-header>
+  </mat-grid-tile>
+
+  <!-- LEFT-SIDE -->
+  <mat-grid-tile [colspan]="gridSettings.dealsListTile.cols" [rowspan]="gridSettings.dealsListTile.rows"
+    [style.background]="gridSettings.dealsListTile.color">
+    <app-deals-list></app-deals-list>
+  </mat-grid-tile>
+
+  <!-- RIGHT-SIDE -->
+  <mat-grid-tile [colspan]="gridSettings.dealFormTile.cols" [rowspan]="gridSettings.dealFormTile.rows"
+    [style.background]="gridSettings.dealFormTile.color">
+    <app-create-deal-form></app-create-deal-form>
+  </mat-grid-tile>
+
+  <!-- FOOTER -->
+  <mat-grid-tile [colspan]="gridSettings.footerTile.cols" [rowspan]="gridSettings.footerTile.rows"
+    [style.background]="gridSettings.footerTile.color">
+    <app-footer></app-footer>
+  </mat-grid-tile>
+
+</mat-grid-list>
