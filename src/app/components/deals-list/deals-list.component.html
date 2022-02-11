@@ -1,11 +1,12 @@
-<ng-container *ngFor="let deal of mockedDeals">
-  <section class="deal-item">
-    <p>{{ deal.deal_name }}</p>
-    <mat-divider></mat-divider>
-    <p>{{ deal.address }}</p>
-    <p>{{ deal.cap_rate }}</p>
-    <p>{{ deal.noi }}</p>
-    <p>{{ deal.purchase_price }}</p>
-  </section>
-
-</ng-container>
+<section class="deal-list__wrapper">
+  <ng-container *ngFor="let deal of dealsDisplay">
+    <article class="deal-item">
+      <h3>{{ deal.dealName }}</h3>
+      <mat-divider></mat-divider>
+      <p>Purchase Price: <strong>{{ deal.purchasePrice | currency }}</strong></p>
+      <p>Address: <strong>{{ deal.address }}</strong></p>
+      <p>Net Operating Income (NOI): <strong>{{ deal.noi | currency }}</strong></p>
+      <p>CapRate: <strong>{{ (deal.purchasePrice / deal.noi) | number : '1.2-2' }}%</strong></p>
+    </article>
+  </ng-container>
+</section>

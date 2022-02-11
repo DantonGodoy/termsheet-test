@@ -1,0 +1,14 @@
+:host {
+  & .deals-list-container,
+  & .deal-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: first baseline;
+    height: 100%;
+  }
+
+  & .deals-list-container {
+    width: 100%;
+  }
+}

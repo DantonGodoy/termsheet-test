@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   template: `
-    <p>
-      footer works!
-    </p>
+    <h3 class="footer-text">
+      Made by Danton Godoy | 2022
+    </h3>
   `,
-  styles: [
-  ]
+  styles: [`
+    .footer-text {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      letter-spacing: 2px;
+    }
+  `]
 })
-export class FooterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class FooterComponent {}

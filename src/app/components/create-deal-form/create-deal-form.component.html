@@ -1,21 +1,48 @@
 <section class="form-section">
 
-  <form [formGroup]="createDealForm">
+  <form class="form-section__wrapper" [formGroup]="createDealForm" (submit)="createDeal(createDealForm.value)">
 
-    <label for="deal-name">Deal Name: </label>
-    <input id="deal-name" type="text" formControlName="dealName">
+    <!-- DEAL NAME -->
+    <mat-form-field class="form-section__input" appearance="outline">
+      <mat-label>Deal Name:</mat-label>
+      <input matInput formControlName="dealName" type="text">
+      <mat-error *ngIf="createDealForm.controls['dealName'].touched && createDealForm.controls['dealName'].invalid">
+        <span *ngIf="createDealForm.controls['dealName'].errors?.['required']">Mandatory field.</span>
+      </mat-error>
+    </mat-form-field>
 
-    <label for="purchase_price">Price: </label>
-    <input id="purchase_price" type="text" formControlName="purchasePrice">
+    <!-- DEAL PRICE -->
+    <mat-form-field class="form-section__input" appearance="outline">
+      <mat-label>Price:</mat-label>
+      <input matInput formControlName="purchasePrice" type="number">
+      <mat-error
+        *ngIf="createDealForm.controls['purchasePrice'].touched && createDealForm.controls['purchasePrice'].invalid">
+        <span *ngIf="createDealForm.controls['purchasePrice'].errors?.['required']">Mandatory field.</span>
+      </mat-error>
+    </mat-form-field>
 
-    <label for="address">Address: </label>
-    <input id="address" type="text" formControlName="address">
+    <!-- DEAL ADDRESS -->
+    <mat-form-field class="form-section__input" appearance="outline">
+      <mat-label>Address:</mat-label>
+      <input matInput formControlName="address" type="text">
+      <mat-error *ngIf="createDealForm.controls['address'].touched && createDealForm.controls['address'].invalid">
+        <span *ngIf="createDealForm.controls['address'].errors?.['required']">Mandatory field.</span>
+      </mat-error>
+    </mat-form-field>
 
-    <label for="noi">Net Operating Income: </label>
-    <input id="noi" type="text" formControlName="noi">
+    <!-- DEAL NOI -->
+    <mat-form-field class="form-section__input" appearance="outline">
+      <mat-label>Net Operating Income:</mat-label>
+      <input matInput formControlName="noi" type="number">
+      <mat-error *ngIf="createDealForm.controls['noi'].touched && createDealForm.controls['noi'].invalid">
+        <span *ngIf="createDealForm.controls['noi'].errors?.['required']">Mandatory field.</span>
+      </mat-error>
+    </mat-form-field>
 
-    <label for="cap_rate">Cap Rate: </label>
-    <input id="cap_rate" type="text" formControlName="capRate">
+    <!-- SEND BUTTON -->
+    <section class="button-section">
+      <button type="submit" mat-raised-button color="accent" [disabled]="createDealForm.invalid">Save Deal</button>
+    </section>
 
   </form>
 

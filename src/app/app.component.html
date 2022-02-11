@@ -8,13 +8,19 @@
   <!-- LEFT-SIDE -->
   <mat-grid-tile [colspan]="gridSettings.dealsListTile.cols" [rowspan]="gridSettings.dealsListTile.rows"
     [style.background]="gridSettings.dealsListTile.color">
-    <app-deals-list></app-deals-list>
+    <section class="deals-list-container">
+      <h1>Available Deals</h1>
+      <app-deals-list></app-deals-list>
+    </section>
   </mat-grid-tile>
 
   <!-- RIGHT-SIDE -->
   <mat-grid-tile [colspan]="gridSettings.dealFormTile.cols" [rowspan]="gridSettings.dealFormTile.rows"
     [style.background]="gridSettings.dealFormTile.color">
-    <app-create-deal-form></app-create-deal-form>
+    <section class="deal-form-container">
+      <h1>Use the form below to create a new deal</h1>
+      <app-create-deal-form></app-create-deal-form>
+    </section>
   </mat-grid-tile>
 
   <!-- FOOTER -->

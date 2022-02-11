@@ -1,7 +1,7 @@
 export interface DealItemModel {
-  deal_name: string;
-  purchase_price: string;
+  dealName: string;
+  purchasePrice: number;
   address: string;
-  noi: string;
-  cap_rate: string;
+  noi: number;
+  capRate?: number;
 }
